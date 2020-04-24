@@ -9,10 +9,8 @@ public class Usuario {
 	private String nombres;
 	private String apellidos;
 	private Date fecha_ultimo_login;
-	private int bloqueado;
 	
-	public Usuario(int id, String usuario, String clave, String nombres, String apellidos, Date fecha_ultimo_login,
-			int bloqueado) {
+	public Usuario(int id, String usuario, String clave, String nombres, String apellidos, Date fecha_ultimo_login) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
@@ -20,8 +18,8 @@ public class Usuario {
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.fecha_ultimo_login = fecha_ultimo_login;
-		this.bloqueado = bloqueado;
 	}
+	
 
 	public int getId() {
 		return id;
@@ -71,14 +69,4 @@ public class Usuario {
 		this.fecha_ultimo_login = fecha_ultimo_login;
 	}
 
-	public int getBloqueado() {
-		return bloqueado;
-	}
-
-	public void setBloqueado(int bloqueado) {
-		this.bloqueado = bloqueado;
-	}
-
-	
-	
 }
