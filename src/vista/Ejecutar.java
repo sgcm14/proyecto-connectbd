@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class Ejecutar {
 	String obtenerFecha() {
 		Calendar cal = Calendar.getInstance();
 		Date Fecha = cal.getTime();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String fechaFormateada = format.format(Fecha);
 		return fechaFormateada;
 	}
@@ -58,7 +59,7 @@ public class Ejecutar {
 										rs.getString(4),rs.getString(5),rs.getDate(6));
 			
 				
-				if(user.equalsIgnoreCase(usuario.getUsuario())&& pass.equals(usuario.getClave())) {
+				if(pass.equals(usuario.getClave())) {
 					u_nombre=(usuario.getNombres().toUpperCase()+" "+usuario.getApellidos().toUpperCase());
 					accesos=rs.getInt(7);
 					//break;
@@ -80,7 +81,7 @@ public class Ejecutar {
 			else if(u_nombre.length()>0 && accesos>=3) {
 				System.out.println("Cuenta Bloqueada");
 			  //System.out.println(accesos);
-				correcto=0;
+				correcto=1;
 			}
 			else if(usuario==null){
 				System.out.println("No existe la Cuenta");
