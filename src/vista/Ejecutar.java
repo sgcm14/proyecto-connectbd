@@ -33,9 +33,9 @@ public class Ejecutar {
 		conn=conect.getConexion();
 			
 	do {
-		System.out.println("Ingresa el usuario: ");
+		System.out.println("Ingresa el usuario:  ");
 		user=sc.next();
-		System.out.println("Ingresa la clave: ");
+		System.out.println("Ingresa la clave:  ");
 		pass=sc.next();
 			   				//"SELECT * from usuario";
 							//"SELECT * from usuario WHERE usuario = ? AND clave = ?";
